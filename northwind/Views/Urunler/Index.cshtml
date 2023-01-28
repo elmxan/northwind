@@ -1,0 +1,63 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+@model   List<Urunler>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+   
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Urun Adi</td>
+                    <td>
+                        Fiyat
+                    </td>
+                    <td>Stok</td>
+                    <td>Kategori Id</td>
+                    <td>Tedarikci Id </td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Urunler urunler in Model)
+                {
+                    <tr>
+                        <td>@urunler.UrunAdi </td>
+                        <td>@urunler.BirimFiyati </td>
+                        <td>@urunler.HedefStokDuzeyi </td>
+                        <td>@urunler.KategoriID </td>
+                        <td> @urunler.TedarikciID</td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+
+                    <td>Kategpori adi  </td>
+                    <td> Tanimi</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Kategoriler kategorilers in ViewBag.llll)
+                {
+                    <tr> @kategorilers.KategoriAdi</tr>
+                    <tr>@kategorilers.Tanimi </tr>
+
+                }
+            </tbody>
+        </table>
+  
+</body>
+</html>

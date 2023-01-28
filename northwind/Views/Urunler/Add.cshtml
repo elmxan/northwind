@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+    <form action="/Urunler/Add" method="post">
+        <body>
+            Urun Adi:<input type="text"  name="UrunAdi" />
+            Fiyat:<input type="number" name="Fiyat" />
+            Stok: <input type="number" name="stok" />
+            kategori:
+            <select name="kid">
+                @foreach (Kategoriler ktg in ViewBag.Kategoriler)
+                {
+                    <option value="@ktg.KategoriID"> @ktg.KategoriAdi </option>
+
+                }
+
+
+
+        @*@  </select>
+            Tedarikciler:
+            <select name="tid"> 
+                @foreach (Tedarikciler td in ViewBag.Tedarikciler)
+                {
+                    <option value="td.TedarikciId">@td.SirketAdi</option>
+                }
+                
+            </select>-->
+            *@
+            <a href="/Urunler/index"> iptal </a>
+            <input type="Submit" name="ekle" value=" Ekl" />
+        </body>
+    </form>
+</body>
+</html>
